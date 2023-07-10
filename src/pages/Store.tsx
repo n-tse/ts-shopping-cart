@@ -1,5 +1,6 @@
 import { Row, Col } from 'react-bootstrap';
 import products from "../data/products.json";
+import ProductCard from '../components/ProductCard';
 
 const Store = () => {
   return (
@@ -9,7 +10,7 @@ const Store = () => {
       <Row lg={3} md={2} xs={1} className='g-3'>
         {products.map(product => {
           return (
-            <Col>{JSON.stringify(product)}</Col>
+            <Col key={product.id}><ProductCard {...product} /></Col>
           )
         })}
       </Row>
