@@ -1,4 +1,5 @@
 import { Card } from "react-bootstrap";
+import { formatPrice } from "../utils/formatPrice";
 
 type ProductCardProps = {
   id: number;
@@ -15,7 +16,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
 }) => {
   return (
     <div>
-      <Card key={id}>
+      <Card key={id} className="mb-4">
         <Card.Img
           variant="top"
           src={imgUrl}
@@ -25,7 +26,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
         <Card.Body className="d-flex flex-column">
           <Card.Title className="d-flex justify-content-between align-items-baseline mb-4">
             <span className="fs-2">{name}</span>
-            <span className="ms-2 text-muted">{price}</span>
+            <span className="ms-2 text-muted">{formatPrice(price)}</span>
           </Card.Title>
         </Card.Body>
       </Card>

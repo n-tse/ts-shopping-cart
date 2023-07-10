@@ -46,5 +46,11 @@
     "name": "Premium Designer Shoes",
     "price": 1179.99,
     "imgUrl": "/images/trendest-studio-XZ3EmAIWuz0-unsplash.jpg"
+  },
+  {
+    "id": 9,
+    "name": "Over-ear Headphones",
+    "price": 119.99,
+    "imgUrl": "/images/milena-trifonova-pHqt1DsHCx0-unsplash.jpg"
   }
 ]
