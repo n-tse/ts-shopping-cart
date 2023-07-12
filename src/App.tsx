@@ -14,7 +14,7 @@ function App() {
       <Container>
         <Suspense fallback={<div>Loading...</div>}>
           <Routes>
-            <Route path="/" element={<Home />} />
+            <Route path="/ts-shopping-cart" element={<Home />} />
             <Route path="/store" element={<Store />} />
           </Routes>
         </Suspense>

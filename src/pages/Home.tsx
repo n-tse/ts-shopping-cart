@@ -1,5 +1,5 @@
 import { Container, Button, Nav } from "react-bootstrap";
-import backgroundImage from "../../public/images/sarah-dorweiler-x2Tmfd1-SgA-unsplash.jpg";
+import backgroundImage from "/images/sarah-dorweiler-x2Tmfd1-SgA-unsplash.jpg";
 import "./Home.css";
 import { NavLink } from "react-router-dom";
 

@@ -11,7 +11,7 @@ const Navbar = () => {
       <Container>
         {/* margin end auto */}
         <Nav className="me-auto">
-          <Nav.Link to="/" as={NavLink}>
+          <Nav.Link to="/ts-shopping-cart" as={NavLink}>
             Home
           </Nav.Link>
           <Nav.Link to="/store" as={NavLink}>
