@@ -13,7 +13,7 @@ const Home = () => {
       />
       <div className="overlay">
         <Container className="w-75">
-          <h1 className="hero-title">Welcome to Our Store</h1>
+          <h1 className="hero-title">Welcome to West Buy</h1>
           <p className="hero-description">
             Discover a wide range of products at affordable prices. Shop now and
             enjoy a seamless shopping experience.
