@@ -1,6 +1,7 @@
-import { Card, Button } from "react-bootstrap";
+import { Card, Button, Form } from "react-bootstrap";
 import { formatPrice } from "../utils/formatPrice";
 import { useShoppingCart } from "../context/ShoppingCartContext";
+import { useState } from "react";
 
 type ProductCardProps = {
   id: number;
@@ -15,8 +16,15 @@ const ProductCard: React.FC<ProductCardProps> = ({
   price,
   imgUrl,
 }) => {
-  const { getItemQuantity, increaseCartQuantity, decreaseCartQuantity, removeFromCart } = useShoppingCart();
+  const { getItemQuantity, updateCartQuantity } = useShoppingCart();
   const quantity = getItemQuantity(id);
+  const [selectedQuantity, setSelectedQuantity] = useState(1);
+
+  const handleQuantityChange = (
+    event: React.ChangeEvent<HTMLSelectElement>
+  ) => {
+    setSelectedQuantity(parseInt(event.target.value));
+  };
 
   return (
     <div>
@@ -33,28 +41,32 @@ const ProductCard: React.FC<ProductCardProps> = ({
             <span className="ms-2 text-muted">{formatPrice(price)}</span>
           </Card.Title>
           <div className="m-auto">
-            {quantity === 0 ? (
-              <Button onClick={() => increaseCartQuantity(id)}>Add to Cart</Button>
-            ) : (
-              <div
-                className="d-flex align-items-center flex-column"
-                style={{ gap: "0.5rem" }}
-              >
-                <div
-                  className="d-flex align-items-center justify-content-center"
-                  style={{ gap: "0.5rem" }}
-                >
-                  <Button onClick={() => decreaseCartQuantity(id)}>-</Button>
-                  <div>
-                    <span className="fs-3">{quantity}</span> in cart
-                  </div>
-                  <Button onClick={() => increaseCartQuantity(id)}>+</Button>
-                </div>
-                <Button variant="danger" size="sm" onClick={() => removeFromCart(id)}>
-                  Remove
-                </Button>
-              </div>
-            )}
+            <Form.Select
+              className="mb-2"
+              style={{ width: "130px", margin: "auto" }}
+              value={selectedQuantity}
+              onChange={handleQuantityChange}
+            >
+              {quantity !== 0 && <option value="0">0(Delete)</option>}
+              {[...Array(10)].map((_, index) => (
+                <option key={index} value={index + 1}>
+                  {index + 1}
+                </option>
+              ))}
+            </Form.Select>
+            <Button
+              style={{ width: "130px" }}
+              onClick={() => {
+                console.log(selectedQuantity);
+                updateCartQuantity(id, selectedQuantity);
+              }}
+            >
+              {quantity === 0
+                ? "Add to Cart"
+                : quantity !== selectedQuantity
+                ? "Update Cart"
+                : "Added to Cart"}
+            </Button>
           </div>
         </Card.Body>
       </Card>

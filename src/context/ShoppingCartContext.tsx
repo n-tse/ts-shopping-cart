@@ -17,8 +17,7 @@ type ShoppingCartContext = {
   cartQuantity: number;
   cartItems: CartItem[];
   getItemQuantity: (id: number) => number;
-  increaseCartQuantity: (id: number) => void;
-  decreaseCartQuantity: (id: number) => void;
+  updateCartQuantity: (id: number, newQuantity: number) => void;
   removeFromCart: (id: number) => void;
 };
 
@@ -29,10 +28,16 @@ export const useShoppingCart = () => {
 };
 
 export function ShoppingCartProvider({ children }: ShoppingCartProviderProps) {
-  const [cartItems, setCartItems] = useLocalStorage<CartItem[]>("shopping-cart", []);
+  const [cartItems, setCartItems] = useLocalStorage<CartItem[]>(
+    "shopping-cart",
+    []
+  );
   const [isOpen, setIsOpen] = useState(false);
 
-  const cartQuantity = cartItems.reduce((quantity, item) => quantity + item.quantity, 0); 
+  const cartQuantity = cartItems.reduce(
+    (quantity, item) => quantity + item.quantity,
+    0
+  );
 
   const openCart = () => setIsOpen(true);
   const closeCart = () => setIsOpen(false);
@@ -41,30 +46,18 @@ export function ShoppingCartProvider({ children }: ShoppingCartProviderProps) {
     return cartItems.find((item) => item.id === id)?.quantity || 0;
   };
 
-  const increaseCartQuantity = (id: number) => {
+  const updateCartQuantity = (id: number, newQuantity: number) => {
     setCartItems((currentCartItems) => {
       if (currentCartItems.find((item) => item.id === id) == null) {
-        return [...currentCartItems, { id, quantity: 1 }];
-      } else {
+        return [...currentCartItems, { id, quantity: newQuantity }];
+      } 
+      else if (newQuantity === 0) {
+        return currentCartItems.filter((item) => item.id !== id)
+      } 
+      else {
         return currentCartItems.map((item) => {
           if (item.id === id) {
-            return { ...item, quantity: item.quantity + 1 };
-          } else {
-            return item;
-          }
-        });
-      }
-    });
-  };
-
-  const decreaseCartQuantity = (id: number) => {
-    setCartItems((currentCartItems) => {
-      if (currentCartItems.find((item) => item.id === id)?.quantity === 1) {
-        return currentCartItems.filter((item) => item.id !== id);
-      } else {
-        return currentCartItems.map((item) => {
-          if (item.id === id) {
-            return { ...item, quantity: item.quantity - 1 };
+            return { ...item, quantity: newQuantity };
           } else {
             return item;
           }
@@ -74,15 +67,16 @@ export function ShoppingCartProvider({ children }: ShoppingCartProviderProps) {
   };
 
   const removeFromCart = (id: number) => {
-    setCartItems(currentCartItems => currentCartItems.filter(item => item.id !== id));
+    setCartItems((currentCartItems) =>
+      currentCartItems.filter((item) => item.id !== id)
+    );
   };
 
   return (
     <ShoppingCartContext.Provider
       value={{
         getItemQuantity,
-        increaseCartQuantity,
-        decreaseCartQuantity,
+        updateCartQuantity,
         removeFromCart,
         openCart,
         closeCart,
