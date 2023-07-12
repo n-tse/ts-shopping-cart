@@ -5,16 +5,19 @@ import Home from "./pages/Home";
 import Store from "./pages/Store";
 import Navbar from "./components/Navbar";
 import { ShoppingCartProvider } from "./context/ShoppingCartContext";
+import { Suspense } from "react";
 
 function App() {
   return (
     <ShoppingCartProvider>
       <Navbar />
       <Container>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/store" element={<Store />} />
-        </Routes>
+        <Suspense fallback={<div>Loading...</div>}>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/store" element={<Store />} />
+          </Routes>
+        </Suspense>
       </Container>
     </ShoppingCartProvider>
   );
