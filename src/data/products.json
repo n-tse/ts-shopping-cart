@@ -1,55 +1,64 @@
 [
   {
     "id": 1,
-    "name": "Luxury Handbag (Pink)",
+    "name": "Luxury Handbag",
+    "description": "Rosewood/Pink",
     "price": 599.99,
     "imgUrl": "/images/creative-headline-se3GNrXjtdQ-unsplash.jpg"
   },
   {
     "id": 2,
-    "name": "Luxury Handbag (Yellow)",
+    "name": "Luxury Handbag",
+    "description": "Yellow/Pink",
     "price": 619.99,
     "imgUrl": "/images/creative-headline-x2l1CSCbTSQ-unsplash.jpg"
   },
   {
     "id": 3,
     "name": "15.6\" FHD Laptop",
+    "description": "8GB Memory - 256GB SSD",
     "price": 999.99,
     "imgUrl": "/images/erick-cerritos-i5UV2HpITYA-unsplash.jpg"
   },
   {
     "id": 4,
     "name": "Men's Wristwatch",
+    "description": "Quartz Chronograph",
     "price": 649.99,
     "imgUrl": "/images/fabian-heimann-4R_WEmhx8og-unsplash.jpg"
   },
   {
     "id": 5,
-    "name": "Digital Watch",
-    "price": 599.99,
+    "name": "Smart Watch",
+    "description": "GPS + Cellular, 41mm",
+    "price": 364.99,
     "imgUrl": "/images/klim-musalimov-By4-TRyUhwA-unsplash.jpg"
   },
   {
     "id": 6,
-    "name": "Running Shoes (Orange/White)",
+    "name": "Running Shoes",
+    "description": "(Orange/White)",
     "price": 89.99,
     "imgUrl": "/images/luis-felipe-lins-J2-wAQDckus-unsplash.jpg"
   },
   {
     "id": 7,
     "name": "Genuine Leather Couch",
+    "description": "Style: Livingston",
     "price": 2399.99,
     "imgUrl": "/images/paul-weaver-nWidMEQsnAQ-unsplash.jpg"
   },
   {
     "id": 8,
     "name": "Premium Designer Shoes",
+    "description": "White/Calf leather",
     "price": 1179.99,
     "imgUrl": "/images/trendest-studio-XZ3EmAIWuz0-unsplash.jpg"
   },
   {
     "id": 9,
     "name": "Over-ear Headphones",
+    "description": "Bluetooth - Noise Canceling",
     "price": 119.99,
     "imgUrl": "/images/milena-trifonova-pHqt1DsHCx0-unsplash.jpg"
   }

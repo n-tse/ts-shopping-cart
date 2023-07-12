@@ -6,6 +6,7 @@ import { useState, useEffect } from "react";
 type ProductCardProps = {
   id: number;
   name: string;
+  description: string;
   price: number;
   imgUrl: string;
 };
@@ -13,6 +14,7 @@ type ProductCardProps = {
 const ProductCard: React.FC<ProductCardProps> = ({
   id,
   name,
+  description,
   price,
   imgUrl,
 }) => {
@@ -43,7 +45,10 @@ const ProductCard: React.FC<ProductCardProps> = ({
         />
         <Card.Body className="d-flex flex-column">
           <Card.Title className="d-flex justify-content-between align-items-baseline mb-4">
-            <span className="fs-2">{name}</span>
+            <div>
+              <div className="fs-2">{name}</div>
+              <div className="fs-5 text-muted">{description}</div>
+            </div>
             <span className="ms-2 text-muted">{formatPrice(price)}</span>
           </Card.Title>
           <div className="m-auto">
@@ -61,8 +66,14 @@ const ProductCard: React.FC<ProductCardProps> = ({
               ))}
             </Form.Select>
             <Button
-              style={{ width: "130px"}}
-              variant={quantity === 0 ? "primary" : quantity !== selectedQuantity ? "secondary" : "success"}
+              style={{ width: "130px" }}
+              variant={
+                quantity === 0
+                  ? "primary"
+                  : quantity !== selectedQuantity
+                  ? "secondary"
+                  : "success"
+              }
               disabled={quantity !== 0 && quantity === selectedQuantity}
               onClick={() => updateCartQuantity(id, selectedQuantity)}
             >
