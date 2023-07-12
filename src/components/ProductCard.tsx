@@ -1,7 +1,7 @@
 import { Card, Button, Form } from "react-bootstrap";
 import { formatPrice } from "../utils/formatPrice";
 import { useShoppingCart } from "../context/ShoppingCartContext";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 type ProductCardProps = {
   id: number;
@@ -19,6 +19,12 @@ const ProductCard: React.FC<ProductCardProps> = ({
   const { getItemQuantity, updateCartQuantity } = useShoppingCart();
   const quantity = getItemQuantity(id);
   const [selectedQuantity, setSelectedQuantity] = useState(1);
+
+  useEffect(() => {
+    if (quantity === 0) {
+      setSelectedQuantity(1);
+    }
+  }, [quantity]);
 
   const handleQuantityChange = (
     event: React.ChangeEvent<HTMLSelectElement>
@@ -55,11 +61,10 @@ const ProductCard: React.FC<ProductCardProps> = ({
               ))}
             </Form.Select>
             <Button
-              style={{ width: "130px" }}
-              onClick={() => {
-                console.log(selectedQuantity);
-                updateCartQuantity(id, selectedQuantity);
-              }}
+              style={{ width: "130px"}}
+              variant={quantity === 0 ? "primary" : quantity !== selectedQuantity ? "secondary" : "success"}
+              disabled={quantity !== 0 && quantity === selectedQuantity}
+              onClick={() => updateCartQuantity(id, selectedQuantity)}
             >
               {quantity === 0
                 ? "Add to Cart"
