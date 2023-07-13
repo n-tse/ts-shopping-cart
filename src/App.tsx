@@ -1,6 +1,6 @@
 import "./App.css";
 import { Route, Routes } from "react-router-dom";
-import { Container } from "react-bootstrap";
+// import { Container } from "react-bootstrap";
 import Home from "./pages/Home";
 import Store from "./pages/Store";
 import Navbar from "./components/Navbar";
@@ -11,14 +11,14 @@ function App() {
   return (
     <ShoppingCartProvider>
       <Navbar />
-      <Container>
+      {/* <Container> */}
         <Suspense fallback={<div>Loading...</div>}>
           <Routes>
             <Route path="/ts-shopping-cart" element={<Home />} />
             <Route path="/store" element={<Store />} />
           </Routes>
         </Suspense>
-      </Container>
+      {/* </Container> */}
     </ShoppingCartProvider>
   );
 }
