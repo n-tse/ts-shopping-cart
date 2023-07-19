@@ -23,8 +23,9 @@ app.use(express.json());
 app.post("/checkout", async (req, res) => {
   console.log('req body: ', req.body);
   const items = req.body.items;
-  // lineItems contains the data we want to send to stripe, formatted for stripe specifically
   let lineItems = [];
+  // lineItems contains the data we want to send to stripe
+  // converted into a format that stripe understands
   items.forEach((item) => {
     lineItems.push(
       {
