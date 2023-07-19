@@ -4,7 +4,7 @@ import { useShoppingCart } from "../context/ShoppingCartContext";
 import { useState, useEffect } from "react";
 
 type ProductCardProps = {
-  id: number;
+  id: string;
   name: string;
   description: string;
   price: number;

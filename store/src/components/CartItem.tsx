@@ -4,7 +4,7 @@ import products from "../data/products.json";
 import { formatPrice } from "../utils/formatPrice";
 
 type CartItemProps = {
-  id: number;
+  id: string;
   quantity: number;
 };
 
