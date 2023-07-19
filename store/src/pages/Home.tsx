@@ -20,7 +20,7 @@ const Home = () => {
               and enjoy a seamless shopping experience.
             </p>
             <Button variant="outline-secondary" size="lg">
-              <Nav.Link to="/store" as={NavLink}>
+              <Nav.Link to="/ts-shopping-cart/store" as={NavLink}>
                 Shop Now
               </Nav.Link>
             </Button>
@@ -48,28 +48,28 @@ const Home = () => {
                 <h6 className="text-uppercase fw-bold mb-4">Products</h6>
                 <p>
                   <a className="text-reset">
-                    <Nav.Link to="/store" as={NavLink}>
+                    <Nav.Link to="/ts-shopping-cart/store" as={NavLink}>
                       Electronics
                     </Nav.Link>
                   </a>
                 </p>
                 <p>
                   <a className="text-reset">
-                    <Nav.Link to="/store" as={NavLink}>
+                    <Nav.Link to="/ts-shopping-cart/store" as={NavLink}>
                       Fashion
                     </Nav.Link>
                   </a>
                 </p>
                 <p>
                   <a className="text-reset">
-                    <Nav.Link to="/store" as={NavLink}>
+                    <Nav.Link to="/ts-shopping-cart/store" as={NavLink}>
                       Home &amp; Kitchen
                     </Nav.Link>
                   </a>
                 </p>
                 <p>
                   <a href="#!" className="text-reset">
-                    <Nav.Link to="/store" as={NavLink}>
+                    <Nav.Link to="/ts-shopping-cart/store" as={NavLink}>
                       Beauty &amp; Health
                     </Nav.Link>
                   </a>

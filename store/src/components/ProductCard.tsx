@@ -39,7 +39,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
       <Card key={id} className="mb-4 h-100">
         <Card.Img
           variant="top"
-          src={`ts-shopping-cart${imgUrl}`}
+          src={imgUrl}
           height="360px"
           style={{ objectFit: "cover" }}
         />

@@ -11,11 +11,11 @@ const Navbar = () => {
       <Container>
         {/* margin end auto */}
         <Nav className="me-auto d-flex align-items-center">
-          <i className="fas fa-tag me-3 fs-2" style={{   color: "#516b3f" }}></i>
+          <i className="fas fa-tag me-3 fs-2" style={{ color: "#516b3f" }}></i>
           <Nav.Link to="/ts-shopping-cart" as={NavLink}>
             Home
           </Nav.Link>
-          <Nav.Link to="/store" as={NavLink}>
+          <Nav.Link to="/ts-shopping-cart/store" as={NavLink}>
             Store
           </Nav.Link>
         </Nav>

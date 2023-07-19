@@ -15,9 +15,9 @@ function App() {
         {/* <Container> */}
         <Suspense fallback={<div>Loading...</div>}>
           <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/store" element={<Store />} />
-            <Route path="/success" element={<OrderSuccess />} />
+            <Route path="/ts-shopping-cart" element={<Home />} />
+            <Route path="/ts-shopping-cart/store" element={<Store />} />
+            <Route path="/ts-shopping-cart/success" element={<OrderSuccess />} />
           </Routes>
         </Suspense>
         {/* </Container> */}

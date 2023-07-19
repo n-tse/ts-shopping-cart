@@ -16,7 +16,7 @@ const CartItem = ({ id, quantity }: CartItemProps) => {
   return (
     <Stack direction="horizontal" gap={2} className="d-flex align-items-center">
       <img
-        src={`ts-shopping-cart${product.imgUrl}`}
+        src={product.imgUrl}
         style={{ width: "200px", height: "140px", objectFit: "cover", borderRadius: "8px" }}
       />
       <div className="me-auto">
