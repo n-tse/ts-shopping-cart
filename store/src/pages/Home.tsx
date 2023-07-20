@@ -19,8 +19,8 @@ const Home = () => {
               Discover a wide range of products at affordable prices. Shop now
               and enjoy a seamless shopping experience.
             </p>
-            <Button variant="outline-secondary" size="lg">
-              <Nav.Link to="/ts-shopping-cart/store" as={NavLink}>
+            <Button variant="outline-secondary" size="lg" className="p-0 overflow-hidden">
+              <Nav.Link to="/ts-shopping-cart/store" as={NavLink} style={{ padding: "0.5rem 1rem" }}>
                 Shop Now
               </Nav.Link>
             </Button>
@@ -34,7 +34,7 @@ const Home = () => {
           <div className="container text-center text-md-start mt-5">
             <div className="row mt-3">
               <div className="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
-                <h6 className="text-uppercase fw-bold mb-4 fs-3">
+                <h6 className="text-uppercase fw-bold mb-4 fs-3" style={{ color: "#516b3f" }}>
                   <i className="fas fa-tag me-3"></i>West Buy
                 </h6>
                 <p>
@@ -76,26 +76,26 @@ const Home = () => {
                 </p>
               </div>
               <div className="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
-                <h6 className="text-uppercase fw-bold mb-4">Useful links</h6>
+                <h6 className="text-uppercase fw-bold mb-4">Other</h6>
                 <p>
-                  <a href="#!" className="text-reset">
+                  <div style={{ textDecoration: "underline" }}>
                     About Us
-                  </a>
+                  </div>
                 </p>
                 <p>
-                  <a href="#!" className="text-reset">
+                  <div style={{ textDecoration: "underline" }}>
                     Contact Us
-                  </a>
+                  </div>
                 </p>
                 <p>
-                  <a href="#!" className="text-reset">
+                  <div style={{ textDecoration: "underline" }}>
                     FAQs
-                  </a>
+                  </div>
                 </p>
                 <p>
-                  <a href="#!" className="text-reset">
+                  <div style={{ textDecoration: "underline" }}>
                     Shipping &amp; Returns
-                  </a>
+                  </div>
                 </p>
               </div>
               <div className="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4 contact">
