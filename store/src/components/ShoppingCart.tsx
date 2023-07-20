@@ -12,22 +12,22 @@ type ShoppingCartProps = {
 const ShoppingCart = ({ isOpen }: ShoppingCartProps) => {
   const { closeCart, cartQuantity, cartItems } = useShoppingCart();
 
-  const checkoutCart = async () => {
-    await fetch('http://localhost:5001/checkout', {
-      method: "POST",
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({ items: cartItems })
-    }).then((response) => {
-      return response.json();
-    }).then((response) => {
-      if (response.url) {
-        // forwards user to stripe
-        window.location.assign(response.url);
-      }
-    })
-  }
+  // const checkoutCart = async () => {
+  //   await fetch('http://localhost:5001/checkout', {
+  //     method: "POST",
+  //     headers: {
+  //       'Content-Type': 'application/json'
+  //     },
+  //     body: JSON.stringify({ items: cartItems })
+  //   }).then((response) => {
+  //     return response.json();
+  //   }).then((response) => {
+  //     if (response.url) {
+  //       // forwards user to stripe
+  //       window.location.assign(response.url);
+  //     }
+  //   })
+  // }
 
   return (
     // bootstrap sidebar component for the sliding side panel
@@ -64,11 +64,11 @@ const ShoppingCart = ({ isOpen }: ShoppingCartProps) => {
                 alignItems: "center",
                 fontSize: "1.25rem",
               }}
-              onClick={checkoutCart}
+              // onClick={checkoutCart}
             >
               <MdOutlineShoppingCartCheckout
                 style={{ width: "24px", height: "100%", marginRight: "0.5rem" }}
-              />{" "}
+              />
               Checkout
             </Button>
           )}
