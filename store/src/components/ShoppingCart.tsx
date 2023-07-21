@@ -13,13 +13,15 @@ type ShoppingCartProps = {
 const ShoppingCart = ({ isOpen }: ShoppingCartProps) => {
   const [isLoading, setIsLoading] = useState(false);
 
-  const { closeCart, cartQuantity, cartItems } = useShoppingCart();
+  const { closeCart, cartQuantity, cartItems, removeFromCart } =
+    useShoppingCart();
 
   const checkoutCart = async () => {
     setIsLoading(true);
 
     try {
       const response = await fetch(
+        // "http://localhost:5001/checkout",
         "https://ts-shopping-cart-server.onrender.com/checkout",
         {
           method: "POST",
@@ -35,6 +37,10 @@ const ShoppingCart = ({ isOpen }: ShoppingCartProps) => {
         if (data.url) {
           // forwards user to stripe
           window.location.assign(data.url);
+          // clear items from cart
+          // cartItems.map((item) => {
+          //   removeFromCart(item.id);
+          // });
         }
       } else {
         console.error("Error:", response.statusText);

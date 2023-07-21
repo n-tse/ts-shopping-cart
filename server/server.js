@@ -27,6 +27,8 @@ app.post("/checkout", async (req, res) => {
   const session = await stripe.checkout.sessions.create({
     line_items: lineItems,
     mode: 'payment',
+    // success_url: "http://localhost:5173/ts-shopping-cart/success",
+    // cancel_url: "http://localhost:5173/ts-shopping-cart",
     success_url: "https://n-tse.github.io/ts-shopping-cart/",
     cancel_url: "https://n-tse.github.io/ts-shopping-cart/",
   });
