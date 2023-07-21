@@ -13,7 +13,7 @@ type ShoppingCartProps = {
 const ShoppingCart = ({ isOpen }: ShoppingCartProps) => {
   const [isLoading, setIsLoading] = useState(false);
 
-  const { closeCart, cartQuantity, cartItems, removeFromCart } =
+  const { closeCart, cartQuantity, cartItems } =
     useShoppingCart();
 
   const checkoutCart = async () => {
@@ -22,7 +22,8 @@ const ShoppingCart = ({ isOpen }: ShoppingCartProps) => {
     try {
       const response = await fetch(
         // "http://localhost:5001/checkout",
-        "https://ts-shopping-cart-server.onrender.com/checkout",
+        // "https://ts-shopping-cart-server.onrender.com/checkout",
+        "https://brown-monkey-vest.cyclic.app/checkout",
         {
           method: "POST",
           headers: {
