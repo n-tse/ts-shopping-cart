@@ -1,6 +1,6 @@
 # West Buy
 
-"West Buy" is a full-stack, fully-responsive ecommerce website built using TypeScript, React, React Bootstrap, Node.js, and Express. It utilizes the Stripe API to securely process payments on the backend, thus providing users with a seamless shopping experience that allows them to browse and purchase products from the catalog with ease.
+"West Buy" is a full-stack, fully-responsive ecommerce website built using TypeScript, React, React Bootstrap, Node.js, and Express. It utilizes the Stripe API to securely process payments on the backend, thus providing users with a seamless shopping experience that allows them to browse and purchase products from the catalog with ease. Additionally, the app utilizes local storage, enabling the contents of the user's cart to persist between sessions.
 
 ## Features
 
@@ -47,18 +47,17 @@ The following technologies were used in the development of West Buy:
   <img src="https://www.vectorlogo.zone/logos/nodejs/nodejs-icon.svg" alt="Node.js" width="40" height="40"/>
 </a>
 
-<a href="https://stripe.com" target="_blank" rel="noreferrer">
-  <img src="https://www.vectorlogo.zone/logos/stripe/stripe-icon.svg" alt="Stripe" width="40" height="40"/>
-</a>
-
 <a href="https://expressjs.com" target="_blank" rel="noreferrer">
   <img src="https://www.vectorlogo.zone/logos/expressjs/expressjs-icon.svg" alt="Express" width="40" height="40"/>
 </a>
 
+<a href="https://stripe.com" target="_blank" rel="noreferrer">
+  <img src="https://www.vectorlogo.zone/logos/stripe/stripe-icon.svg" alt="Stripe" width="40" height="40"/>
+</a>
 
 ## Deployment
 
-The client is deployed using GitHub Pages, and the server is deployed via Render.com. Check out the site for yourself at [https://n-tse.github.io/ts-shopping-cart/](https://n-tse.github.io/ts-shopping-cart/)
+The client is deployed using GitHub Pages, and the server is deployed via the Cyclic.sh platform. Check out the site for yourself at [https://n-tse.github.io/ts-shopping-cart/](https://n-tse.github.io/ts-shopping-cart/)
 
 ## Getting Started
 
